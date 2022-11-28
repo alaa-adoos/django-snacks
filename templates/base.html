@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    
+    <title>{% block title %}{% endblock %} snaks Webpage</title>
+    {% endblock %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css'%}">
+</head>
+<body>
+   
+    <header>
+       
+        <nav>
+            <ul>
+            <li><a href={% url 'home' %}>Home</a></li>
+            <li><a href={% url 'about' %}>About</a></li>
+           </ul>
+        </nav>
+    </header>
+    
+    {% block content %} 
+    {% endblock %}
+    <div id="footer">
+        {% block footer %}
+        &copy; Copyright 2022 by <a href="https://www.linkedin.com/in/alaa-abu-al-adoos-047428237/">Alaa abualadoos</a>.
+        {% endblock %}
+    </div>
+</body>
+</html>
